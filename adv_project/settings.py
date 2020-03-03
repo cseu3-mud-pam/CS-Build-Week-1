@@ -65,6 +65,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'adv_project.disable.DisableCSRFMiddleware',
 ]
 
 ROOT_URLCONF = 'adv_project.urls'
@@ -154,3 +155,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 import django_heroku
 django_heroku.settings(locals())
+del DATABASES['default']['OPTIONS']['sslmode']
