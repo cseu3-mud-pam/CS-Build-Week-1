@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from .models import *
 from rest_framework.decorators import api_view
 import json
+from . import create_world
 
 # instantiate pusher
 # pusher = Pusher(app_id=config('PUSHER_APP_ID'), key=config('PUSHER_KEY'), secret=config('PUSHER_SECRET'), cluster=config('PUSHER_CLUSTER'))
@@ -65,3 +66,31 @@ def move(request):
 def say(request):
     # IMPLEMENT
     return JsonResponse({'error':"Not yet implemented"}, safe=True, status=500)
+
+@csrf_exempt
+@api_view(["GET"])
+def rooms(request):
+    # json.dumps(Room.objects.all())
+    all_rooms = Room.objects.all()
+    new_rooms = []
+    for item in all_rooms:
+        new_obj = {
+            "id": item.id, 
+            "descritption": item.description,
+            "east": item.e_to,
+            "west": item.w_to,
+            "south": item.s_to,
+            "north": item.n_to,
+
+        }
+        new_rooms.append(new_obj)
+        # print('==============================')
+        # print(item.id)
+        # print(item.description)
+        # print(item.e_to)
+        # print(item.w_to)
+        # print(item.s_to)
+        # print(item.n_to)
+        # print('==============================\n')
+
+    return JsonResponse({"message": new_rooms}, safe=True)
