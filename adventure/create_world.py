@@ -4,49 +4,248 @@ from adventure.models import Player, Room
 
 Room.objects.all().delete()
 
-r_outside = Room(title="Outside Cave Entrance",
-                 description="North of you, the cave mount beckons")
+# Apetsi's rooms
+outside_room = Room(title='Outside the map', description='North of you lies some great adventure')
+room1 = Room(title="Random room", description="random description for room")
+room2 = Room(title="Random room", description="random description for room")
+room3 = Room(title="Random room", description="random description for room")
+room4 = Room(title="Random room", description="random description for room")
+room5 = Room(title="Random room", description="random description for room")
+room6 = Room(title="Random room", description="random description for room")
+room7 = Room(title="Random room", description="random description for room")
+room8 = Room(title="Random room", description="random description for room")
+room9 = Room(title="Random room", description="random description for room")
+room10 = Room(title="Random room", description="random description for room")
+room11 = Room(title="Random room", description="random description for room")
+room12 = Room(title="Random room", description="random description for room")
+room13 = Room(title="Random room", description="random description for room")
+room14 = Room(title="Random room", description="random description for room")
+room15 = Room(title="Random room", description="random description for room")
+room16 = Room(title="Random room", description="random description for room")
+room17 = Room(title="Random room", description="random description for room")
+room18 = Room(title="Random room", description="random description for room")
+room19 = Room(title="Random room", description="random description for room")
+room20 = Room(title="Random room", description="random description for room")
 
-r_foyer = Room(
-    title="Foyer",
-    description="""Dim light filters in from the south. Dusty
-passages run north and east.""")
+room51 = Room(title="title 51", description="some random descritption")
+room52 = Room(title="title 52", description="some random descritption")
+room53 = Room(title="title 53", description="some random descritption")
+room54 = Room(title="title 54", description="some random descritption")
+room55 = Room(title="title 55", description="some random descritption")
+room56 = Room(title="title 56", description="some random descritption")
+room57 = Room(title="title 57", description="some random descritption")
+room58 = Room(title="title 58", description="some random descritption")
+room59 = Room(title="title 59", description="some random descritption")
+room60 = Room(title="title 60", description="some random descritption")
+room61 = Room(title="title 61", description="some random descritption")
+room62 = Room(title="title 62", description="some random descritption")
+room63 = Room(title="title 63", description="some random descritption")
+room64 = Room(title="title 64", description="some random descritption")
+room65 = Room(title="title 65", description="some random descritption")
+room66 = Room(title="title 66", description="some random descritption")
+room67 = Room(title="title 67", description="some random descritption")
+room68 = Room(title="title 68", description="some random descritption")
+room69 = Room(title="title 69", description="some random descritption")
+room70 = Room(title="title 70", description="some random descritption")
+room71 = Room(title="title 71", description="some random descritption")
+room72 = Room(title="title 72", description="some random descritption")
+room73 = Room(title="title 73", description="some random descritption")
+room74 = Room(title="title 74", description="some random descritption")
+room75 = Room(title="title 75", description="some random descritption")
+room76 = Room(title="title 76", description="some random descritption")
+room77 = Room(title="title 77", description="some random descritption")
+room78 = Room(title="title 78", description="some random descritption")
+room79 = Room(title="title 79", description="some random descritption")
+room80 = Room(title="title 80", description="some random descritption")
+room81 = Room(title="title 81", description="some random descritption")
+room82 = Room(title="title 83", description="some random descritption")
+room83 = Room(title="title 83", description="some random descritption")
+room84 = Room(title="title 84", description="some random descritption")
+room85 = Room(title="title 85", description="some random descritption")
+room86 = Room(title="title 86", description="some random descritption")
+room87 = Room(title="title 87", description="some random descritption")
+room88 = Room(title="title 88", description="some random descritption")
+room89 = Room(title="title 89", description="some random descritption")
+room90 = Room(title="title 90", description="some random descritption")
+room91 = Room(title="title 91", description="some random descritption")
+room92 = Room(title="title 92", description="some random descritption")
+room93 = Room(title="title 93", description="some random descritption")
+room94 = Room(title="title 94", description="some random descritption")
+room95 = Room(title="title 95", description="some random descritption")
+room96 = Room(title="title 96", description="some random descritption")
+room97 = Room(title="title 97", description="some random descritption")
+room98 = Room(title="title 98", description="some random descritption")
+room99 = Room(title="title 99", description="some random descritption")
+room100 = Room(title="title 100", description="some random descritption")
 
-r_overlook = Room(title="Grand Overlook",
-                  description="""A steep cliff appears before you, falling
-into the darkness. Ahead to the north, a light flickers in
-the distance, but there is no way across the chasm.""")
+# save rooms
+for x in range(1,21):
+    room = f"room{x}"
+    prog = "room.save()"
+    exec(prog)
 
-r_narrow = Room(
-    title="Narrow Passage",
-    description="""The narrow passage bends here from west
-to north. The smell of gold permeates the air.""")
+for x in range(50, 101):
+    room = f"room{x}"
+    prog = "room.save()"
 
-r_treasure = Room(title="Treasure Chamber",
-                  description="""You've found the long-lost treasure
-chamber! Sadly, it has already been completely emptied by
-earlier adventurers. The only exit is to the south.""")
+# connect rooms
+outside_room.connectRooms(room1, 'n')
+room1.connectRooms(outside_room, 's')
+room2.connectRooms(room3, 'e')
+room3.connectRooms(room2, 'w')
+room3.connectRooms(room4, 'e')
+room4.connectRooms(room3, 'w')
+room4.connectRooms(room5, 'e')
+# room5.connectRooms(room4, '')
+room5.connectRooms(room6, 'n')
+room6.connectRooms(room5, 's')
+room6.connectRooms(room7, 'w')
+room7.connectRooms(room6, 'e')
+room7.connectRooms(room8, 'w')
+room8.connectRooms(room7, 'e')
+room8.connectRooms(room9, 'w')
+room9.connectRooms(room10, 'n')
+room10.connectRooms(room9, 's')
+room10.connectRooms(room11, 'e')
+room11.connectRooms(room10, 'w')
+room11.connectRooms(room12, 'e')
+room12.connectRooms(room11, 'w')
+room12.connectRooms(room13, 'e')
+room13.connectRooms(room14, 'n')
+room15.connectRooms(room16, 'w')
+room16.connectRooms(room15, 'e')
+room16.connectRooms(room17, 'w')
+room17.connectRooms(room18, 'w')
+room18.connectRooms(room19, 'w')
+room19.connectRooms(room20, 'n')
+room20.connectRooms(room51, 'e')
+room51.connectRooms(room20, 'w')
+room51.connectRooms(room70, 'n')
+room52.connectRooms(room69, 'n')
+room52.connectRooms(room49, 's')
+room54.connectRooms(room67, 'n')
+room54.connectRooms(room55, 'w')
+room55.connectRooms(room54, 'e')
+room55.connectRooms(room46, 's')
+room57.connectRooms(room64, 'n')
+room57.connectRooms(room44, 's')
+room58.connectRooms(room63, 'n')
+room60.connectRooms(room61, 'n')
+room60.connectRooms(room41, 's')
+room61.connectRooms(room80, 'n')
+room61.connectRooms(room60, 's')
+room62.connectRooms(room63, 'e')
+room98.connectRooms(room97, 'e')
+room98.connectRooms(room83, 's')
+room98.connectRooms(room99, 'w')
+room67.connectRooms(room68, 'e')
+room67.connectRooms(room54, 's')
+room67.connectRooms(room66, 'w')
+room63.connectRooms(room58, 's')
+room63.connectRooms(room62, 'w')
+room66.connectRooms(room75, 'n')
+room66.connectRooms(room67, 'e')
+room64.connectRooms(room65, 'e')
+room64.connectRooms(room57, 's')
+room62.connectRooms(room79, 'n')
+room65.connectRooms(room76, 'n')
+room65.connectRooms(room67, 'w')
+room68.connectRooms(room73, 'n')
+room68.connectRooms(room67, 'w')
+room69.connectRooms(room70, 'e')
+room69.connectRooms(room52, 's')
+room70.connectRooms(room71, 'n')
+room70.connectRooms(room51, 's')
+room70.connectRooms(room69, 'w')
+room79.connectRooms(room78, 'e')
+room79.connectRooms(room62, 's')
+room79.connectRooms(room80, 'w')
+room71.connectRooms(room90, 'n')
+room71.connectRooms(room70, 's')
+room73.connectRooms(room88, 'n')
+room73.connectRooms(room72, 'e')
+room73.connectRooms(room68, 's')
+room72.connectRooms(room73, 'w')
+room76.connectRooms(room85, 'n')
+room76.connectRooms(room65, 's')
+room75.connectRooms(room66, 's')
+room78.connectRooms(room83, 'n')
+room78.connectRooms(room79, 'w')
+room80.connectRooms(room79, 'e')
+room80.connectRooms(room61, 's')
+room81.connectRooms(room100, 'n')
+room83.connectRooms(room98, 'n')
+room83.connectRooms(room78, 's')
+room100.connectRooms(room81, 's')
+room84.connectRooms(room85, 'e')
+room85.connectRooms(room76, 's')
+room85.connectRooms(room84, 'w')
+room86.connectRooms(room95, 'n')
+room86.connectRooms(room87, 'e')
+room87.connectRooms(room88, 'e')
+room87.connectRooms(room86, 'w')
+room88.connectRooms(room93, 'n')
+room88.connectRooms(room73, 's')
+room88.connectRooms(room87, 'w')
+room89.connectRooms(room90, 'e')
+room90.connectRooms(room71, 's')
+room90.connectRooms(room89, 'w')
+room91.connectRooms(room92, 'w')
+room92.connectRooms(room91, 'e')
+room92.connectRooms(room93, 'w')
+room93.connectRooms(room92, 'e')
+room93.connectRooms(room86, 's')
+room95.connectRooms(room86, 's')
+room95.connectRooms(room96, 'w')
+room96.connectRooms(room95, 'e')
+room96.connectRooms(room97, 'w')
+room97.connectRooms(room96, 'e')
+room97.connectRooms(room98, 'w')
+room99.connectRooms(room98, 'w')
 
-r_outside.save()
-r_foyer.save()
-r_overlook.save()
-r_narrow.save()
-r_treasure.save()
+# r_outside = (title="Outside Cave Entrance",
+#                  description="North of you, the cave mount beckons")
+
+# r_foyer = Room(
+#     title="Foyer",
+#     description="""Dim light filters in from the south. Dusty
+# passages run north and east.""")
+
+# r_overlook = Room(title="Grand Overlook",
+#                   description="""A steep cliff appears before you, falling
+# into the darkness. Ahead to the north, a light flickers in
+# the distance, but there is no way across the chasm.""")
+
+# r_narrow = Room(
+#     title="Narrow Passage",
+#     description="""The narrow passage bends here from west
+# to north. The smell of gold permeates the air.""")
+
+# r_treasure = Room(title="Treasure Chamber",
+#                   description="""You've found the long-lost treasure
+# chamber! Sadly, it has already been completely emptied by
+# earlier adventurers. The only exit is to the south.""")
+
+# r_outside.save()
+# r_foyer.save()
+# r_overlook.save()
+# r_narrow.save()
+# r_treasure.save()
 
 # Link rooms together
-r_outside.connectRooms(r_foyer, "n")
-r_foyer.connectRooms(r_outside, "s")
+# r_outside.connectRooms(r_foyer, "n")
+# r_foyer.connectRooms(r_outside, "s")
 
-r_foyer.connectRooms(r_overlook, "n")
-r_overlook.connectRooms(r_foyer, "s")
+# r_foyer.connectRooms(r_overlook, "n")
+# r_overlook.connectRooms(r_foyer, "s")
 
-r_foyer.connectRooms(r_narrow, "e")
-r_narrow.connectRooms(r_foyer, "w")
+# r_foyer.connectRooms(r_narrow, "e")
+# r_narrow.connectRooms(r_foyer, "w")
 
-r_narrow.connectRooms(r_treasure, "n")
-r_treasure.connectRooms(r_narrow, "s")
+# r_narrow.connectRooms(r_treasure, "n")
+# r_treasure.connectRooms(r_narrow, "s")
 
 players = Player.objects.all()
 for p in players:
-    p.currentRoom = r_outside.id
+    p.currentRoom = outside_room.id
     p.save()
