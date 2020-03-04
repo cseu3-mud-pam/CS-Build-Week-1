@@ -70,11 +70,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-<<<<<<< HEAD
-    'adv_project.middle.DisableCSRFMiddleware',
-=======
     'adv_project.disable.DisableCSRFMiddleware',
->>>>>>> 064c49a4f753dddbecd7c7639815d0f849fbb840
 ]
 
 ROOT_URLCONF = 'adv_project.urls'
