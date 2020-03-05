@@ -75,7 +75,8 @@ def rooms(request):
     new_rooms = []
     for item in all_rooms:
         new_obj = {
-            "id": item.id, 
+            "id": item.id,
+            "title": item.title, 
             "descritption": item.description,
             "east": item.e_to,
             "west": item.w_to,
